@@ -1185,7 +1185,9 @@ class MainWindow(QMainWindow, WindowMixin):
                                                          QFileDialog.ShowDirsOnly | QFileDialog.DontResolveSymlinks))
         else:
             targetDirPath = ustr(defaultOpenDirPath)
-
+        ### add this line to let targetDirPath to be the XML files path
+        ### no need to choose XML files path
+        self.defaultSaveDir = targetDirPath
         self.importDirImages(targetDirPath)
 
     def importDirImages(self, dirpath):
